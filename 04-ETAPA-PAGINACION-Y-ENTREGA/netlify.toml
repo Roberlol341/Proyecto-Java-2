@@ -1,0 +1,12 @@
+[build]
+  command = "PORT=4173 BASE_PATH=/ pnpm --filter @workspace/forkify-recetas run build"
+  publish = "artifacts/forkify-recetas/dist/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--version"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
